@@ -1,0 +1,23 @@
+name: Build & Verify
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile Native C# WPF Studio & Setup Installer
+        shell: cmd
+        run: call build_exe.bat
+
+      - name: Verify Python Driver Key Matrix (61 Keys)
+        shell: pwsh
+        run: |
+          python -c "from k617_driver import KEYS; assert len(KEYS) == 61, 'Expected 61 keys'; print('Verified 61-key matrix OK')"

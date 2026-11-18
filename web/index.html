@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FizzCtl — Redragon K617 Fizz Driver &amp; Lighting Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-shell">
+    <!-- LEFT NAVIGATION RAIL -->
+    <aside class="sidebar">
+      <div class="brand-header">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="5" width="20" height="14" rx="2"/>
+            <line x1="6" y1="9" x2="6.01" y2="9"/>
+            <line x1="10" y1="9" x2="10.01" y2="9"/>
+            <line x1="14" y1="9" x2="14.01" y2="9"/>
+            <line x1="18" y1="9" x2="18.01" y2="9"/>
+            <line x1="6" y1="13" x2="6.01" y2="13"/>
+            <line x1="18" y1="13" x2="18.01" y2="13"/>
+            <line x1="8" y1="15" x2="16" y2="15"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <div class="brand-name">Fizz<span class="accent-text">Ctl</span></div>
+          <div class="brand-sub">Redragon K617 Fizz Studio</div>
+        </div>
+      </div>
+
+      <div class="nav-group-label">Modüller</div>
+      <nav class="side-nav">
+        <button class="nav-tab-btn active" data-tab="tab-effects">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <span>Aydınlatma Efektleri</span>
+          <span class="nav-count">23</span>
+        </button>
+
+        <button class="nav-tab-btn" data-tab="tab-paint">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+          </svg>
+          <span>Tuş Boyama &amp; Profiller</span>
+          <span class="nav-count">8</span>
+        </button>
+
+        <button class="nav-tab-btn" data-tab="tab-macros">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="4 17 10 11 4 5"/>
+            <line x1="12" y1="19" x2="20" y2="19"/>
+          </svg>
+          <span>Makro Stüdyosu</span>
+          <span class="nav-count" id="nav-macro-count">2</span>
+        </button>
+
+        <button class="nav-tab-btn" data-tab="tab-firmware">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="4" y="4" width="16" height="16" rx="2"/>
+            <rect x="9" y="9" width="6" height="6"/>
+            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>
+          </svg>
+          <span>Donanım Hafızası</span>
+          <span class="nav-count">MCU</span>
+        </button>
+
+        <button class="nav-tab-btn" data-tab="tab-settings">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="4" y1="21" x2="4" y2="14"/>
+            <line x1="4" y1="10" x2="4" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12" y2="3"/>
+            <line x1="20" y1="21" x2="20" y2="16"/>
+            <line x1="20" y1="12" x2="20" y2="3"/>
+            <line x1="1" y1="14" x2="7" y2="14"/>
+            <line x1="9" y1="8" x2="15" y2="8"/>
+            <line x1="17" y1="16" x2="23" y2="16"/>
+          </svg>
+          <span>Ayarlar &amp; Performans</span>
+        </button>
+      </nav>
+
+      <!-- TELEMETRY FOOTER IN SIDEBAR -->
+      <div class="sidebar-telemetry">
+        <div class="telemetry-header">
+          <span class="led-dot online" id="conn-led"></span>
+          <span class="telemetry-title" id="conn-status">K617 Fizz Bağlı (USB HID)</span>
+        </div>
+        <div class="telemetry-grid">
+          <div class="telemetry-cell">
+            <span class="tel-label">BELLEK</span>
+            <span class="tel-val" id="header-ram">0.9 MB</span>
+          </div>
+          <div class="telemetry-cell">
+            <span class="tel-label">YENİLEME</span>
+            <span class="tel-val"><span id="header-fps">35</span> FPS</span>
+          </div>
+        </div>
+        <button class="btn-sidebar-trim" id="btn-quick-trim" title="Windows Working Set belleğini anında temizle">
+          Belleği Temizle
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN WORKSPACE -->
+    <div class="workspace">
+
+      <!-- PERSISTENT HARDWARE KEYBOARD DECK -->
+      <section class="stage-section">
+        <div class="stage-topbar">
+          <div class="stage-meta-left">
+            <span class="stage-code">61-Tuş ANSI Mekanik Klavye</span>
+            <span class="stage-divider">•</span>
+            <span class="stage-active-mode" id="active-mode-readout">Gökkuşağı Dalgası</span>
+            <span class="stage-badge" id="preview-badge">Canlı Önizleme</span>
+          </div>
+
+          <!-- Quick Selection Groups -->
+          <div class="stage-quick-groups">
+            <span class="quick-label">Hızlı Boya:</span>
+            <button class="qgroup-btn" data-group="wasd">WASD</button>
+            <button class="qgroup-btn" data-group="qwer">QWER</button>
+            <button class="qgroup-btn" data-group="numbers">1-0</button>
+            <button class="qgroup-btn" data-group="modifiers">Modifiye</button>
+            <button class="qgroup-btn" data-group="all">Tümü</button>
+          </div>
+        </div>
+
+        <div class="keyboard-deck-wrap">
+          <div class="chassis">
+            <div class="usb-port-indicator" title="USB Type-C Port"></div>
+            <div class="chassis-screw tl"></div>
+            <div class="chassis-screw tr"></div>
+            <div class="chassis-screw bl"></div>
+            <div class="chassis-screw br"></div>
+            <div class="plate">
+              <div class="keyboard-layout" id="keyboard-layout"></div>
+            </div>
+            <div class="chassis-lip">
+              <span>Sinowealth SH68F90A</span>
+              <span class="chassis-brand-etch">REDRAGON K617 FIZZ</span>
+              <span>VID 258A : PID 0049</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOWER DYNAMIC MODULE AREA -->
+      <div class="module-container">
+
+        <!-- =============================================================== -->
+        <!-- TAB 1: LIGHTING MATRIX (23 MODES + RIGHT INSPECTOR)             -->
+        <!-- =============================================================== -->
+        <div class="tab-content active" id="tab-effects">
+          <div class="effects-split-layout">
+
+            <!-- Left: Filter Bar + 23 Effects Grid -->
+            <div class="effects-browser">
+              <div class="effects-toolbar">
+                <div class="filter-chips">
+                  <button class="chip active" data-filter="all">TÜMÜ (23)</button>
+                  <button class="chip" data-filter="spectrum">SPEKTRUM</button>
+                  <button class="chip" data-filter="reactive">TEPKİSEL</button>
+                  <button class="chip" data-filter="audio">SES DSP</button>
+                  <button class="chip" data-filter="thematic">ATMOSFER</button>
+                </div>
+
+                <div class="search-wrap">
+                  <svg class="search-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  </svg>
+                  <input type="text" id="effect-search" class="search-input" placeholder="Efekt filtrele...">
+                </div>
+              </div>
+
+              <div class="cards-grid" id="effects-grid">
+                <div class="card-item active" data-effect="rainbow_wave" data-category="spectrum">
+                  <div class="card-top">
+                    <span class="card-idx">01</span>
+                    <span class="card-tag tag-spectrum">SPEKTRUM</span>
+                  </div>
+                  <div class="card-name">Gökkuşağı Dalgası</div>
+                  <div class="card-desc">Açı ve yöne göre kesintisiz spektrum akışı</div>
+                  <div class="card-bar bar-rainbow"></div>
+                </div>
+
+                <div class="card-item" data-effect="rainbow_spiral" data-category="spectrum">
+                  <div class="card-top">
+                    <span class="card-idx">02</span>
+                    <span class="card-tag tag-spectrum">SPEKTRUM</span>
+                  </div>
+                  <div class="card-name">Spiral Çark</div>
+                  <div class="card-desc">Merkezden dışa dönen radyal faz döngüsü</div>
+                  <div class="card-bar bar-rainbow"></div>
+                </div>
+
+                <div class="card-item" data-effect="color_cycle" data-category="spectrum">
+                  <div class="card-top">
+                    <span class="card-idx">03</span>
+                    <span class="card-tag tag-spectrum">SPEKTRUM</span>
+                  </div>
+                  <div class="card-name">Senkron Renk Çarkı</div>
+                  <div class="card-desc">Tüm anahtarlarda eşzamanlı HSV renk geçişi</div>
+                  <div class="card-bar bar-spectrum"></div>
+                </div>
+
+                <div class="card-item" data-effect="gradient_sweep" data-category="spectrum">
+                  <div class="card-top">
+                    <span class="card-idx">04</span>
+                    <span class="card-tag tag-spectrum">SPEKTRUM</span>
+                  </div>
+                  <div class="card-name">Üç Renk Süpürme</div>
+                  <div class="card-desc">Seçili 3 renk kanalı arasında doğrusal geçiş</div>
+                  <div class="card-bar bar-dual"></div>
+                </div>
+
+                <div class="card-item" data-effect="breathing" data-category="spectrum">
+                  <div class="card-top">
+                    <span class="card-idx">05</span>
+                    <span class="card-tag tag-spectrum">SPEKTRUM</span>
+                  </div>
+                  <div class="card-name">Nefes Alma (Pulse)</div>
+                  <div class="card-desc">İki renk tonu arasında sinüzoidal parlama</div>
+                  <div class="card-bar bar-dual"></div>
+                </div>
+
+                <div class="card-item" data-effect="static" data-category="spectrum">
+                  <div class="card-top">
+                    <span class="card-idx">06</span>
+                    <span class="card-tag tag-spectrum">EKO MOD</span>
+                  </div>
+                  <div class="card-name">Sabit Tek Renk</div>
+                  <div class="card-desc">Sıfır arka plan USB trafiği, sabit aydınlatma</div>
+                  <div class="card-bar bar-static"></div>
+                </div>
+
+                <div class="card-item" data-effect="reactive_ripple" data-category="reactive">
+                  <div class="card-top">
+                    <span class="card-idx">07</span>
+                    <span class="card-tag tag-reactive">TEPKİSEL</span>
+                  </div>
+                  <div class="card-name">Tepkisel Dalga (Ripple)</div>
+                  <div class="card-desc">Basılan anahtardan dışa yayılan kinetik halka</div>
+                  <div class="card-bar bar-reactive"></div>
+                </div>
+
+                <div class="card-item" data-effect="reactive_single" data-category="reactive">
+                  <div class="card-top">
+                    <span class="card-idx">08</span>
+                    <span class="card-tag tag-reactive">TEPKİSEL</span>
+                  </div>
+                  <div class="card-name">Bas-Sön (Key Fade)</div>
+                  <div class="card-desc">Basılan tuş anında parlar ve sönümlenir</div>
+                  <div class="card-bar bar-reactive"></div>
+                </div>
+
+                <div class="card-item" data-effect="reactive_line" data-category="reactive">
+                  <div class="card-top">
+                    <span class="card-idx">09</span>
+                    <span class="card-tag tag-reactive">TEPKİSEL</span>
+                  </div>
+                  <div class="card-name">Crosshair Eksen Işını</div>
+                  <div class="card-desc">Basılan tuşun satır ve sütun eksenini aydınlatır</div>
+                  <div class="card-bar bar-reactive"></div>
+                </div>
+
+                <div class="card-item" data-effect="reactive_explosion" data-category="reactive">
+                  <div class="card-top">
+                    <span class="card-idx">10</span>
+                    <span class="card-tag tag-reactive">TEPKİSEL</span>
+                  </div>
+                  <div class="card-name">Kıvılcım Saçılması</div>
+                  <div class="card-desc">Yazım hızına duyarlı parçacık dağılımı</div>
+                  <div class="card-bar bar-reactive"></div>
+                </div>
+
+                <div class="card-item" data-effect="audio_bars" data-category="audio">
+                  <div class="card-top">
+                    <span class="card-idx">11</span>
+                    <span class="card-tag tag-audio">SES DSP</span>
+                  </div>
+                  <div class="card-name">14-Bant Spektrum</div>
+                  <div class="card-desc">Gerçek zamanlı PCM frekans genlik sütunları</div>
+                  <div class="card-bar bar-audio"></div>
+                </div>
+
+                <div class="card-item" data-effect="audio_pulse" data-category="audio">
+                  <div class="card-top">
+                    <span class="card-idx">12</span>
+                    <span class="card-tag tag-audio">SES DSP</span>
+                  </div>
+                  <div class="card-name">Bas / Ritim Vuruşu</div>
+                  <div class="card-desc">Düşük frekans tepe noktalarına duyarlı flaş</div>
+                  <div class="card-bar bar-audio"></div>
+                </div>
+
+                <div class="card-item" data-effect="audio_wave" data-category="audio">
+                  <div class="card-top">
+                    <span class="card-idx">13</span>
+                    <span class="card-tag tag-audio">SES DSP</span>
+                  </div>
+                  <div class="card-name">Radyal Ses Dalgası</div>
+                  <div class="card-desc">Merkezden dışa doğru ses şiddeti halkaları</div>
+                  <div class="card-bar bar-audio"></div>
+                </div>
+
+                <div class="card-item" data-effect="matrix" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">14</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Dijital Yağmur (Matrix)</div>
+                  <div class="card-desc">14 sütunlu dikey fosforlu veri akışı</div>
+                  <div class="card-bar bar-matrix"></div>
+                </div>
+
+                <div class="card-item" data-effect="cyberpunk_glitch" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">15</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Frekans Glitch</div>
+                  <div class="card-desc">Yüksek kontrastlı asimetrik sinyal sıçraması</div>
+                  <div class="card-bar bar-dual"></div>
+                </div>
+
+                <div class="card-item" data-effect="fire" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">16</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Termal Kor &amp; Alev</div>
+                  <div class="card-desc">Alt satırdan yükselen termal konveksiyon modeli</div>
+                  <div class="card-bar bar-fire"></div>
+                </div>
+
+                <div class="card-item" data-effect="police_lights" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">17</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Strobe Flaşör</div>
+                  <div class="card-desc">Sol ve sağ yarı arasında çift fazlı çakar</div>
+                  <div class="card-bar bar-police"></div>
+                </div>
+
+                <div class="card-item" data-effect="aurora" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">18</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Kuzey Işıkları (Aurora)</div>
+                  <div class="card-desc">Yumuşak organik atmosferik dalga geçişi</div>
+                  <div class="card-bar bar-matrix"></div>
+                </div>
+
+                <div class="card-item" data-effect="ocean_tide" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">19</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Derin Gelgit</div>
+                  <div class="card-desc">Koyu lacivert ve turkuaz faz katmanları</div>
+                  <div class="card-bar bar-spectrum"></div>
+                </div>
+
+                <div class="card-item" data-effect="starlight" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">20</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Yıldız Alanı</div>
+                  <div class="card-desc">Bağımsız rastgele tuşlarda yumuşak parlama</div>
+                  <div class="card-bar bar-static"></div>
+                </div>
+
+                <div class="card-item" data-effect="heartbeat" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">21</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Kardiyak Nabız (EKG)</div>
+                  <div class="card-desc">Yatay eksende ilerleyen osiloskop darbesi</div>
+                  <div class="card-bar bar-fire"></div>
+                </div>
+
+                <div class="card-item" data-effect="radar" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">22</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Polar Radar Taraması</div>
+                  <div class="card-desc">360 derece dönen açısal tarama huzmesi</div>
+                  <div class="card-bar bar-matrix"></div>
+                </div>
+
+                <div class="card-item" data-effect="lava_lamp" data-category="thematic">
+                  <div class="card-top">
+                    <span class="card-idx">23</span>
+                    <span class="card-tag tag-thematic">ATMOSFER</span>
+                  </div>
+                  <div class="card-name">Metaball Plazma</div>
+                  <div class="card-desc">Dinamik yoğunluk alanlarının kesişim simülasyonu</div>
+                  <div class="card-bar bar-fire"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Docked Parameter Inspector -->
+            <aside class="inspector-panel">
+              <div class="inspector-header">PARAMETRE DENETÇİSİ</div>
+
+              <div class="control-field">
+                <div class="field-label">
+                  <span>PARLAKLIK DÜZEYİ</span>
+                  <span class="mono-val" id="label-brightness">100%</span>
+                </div>
+                <input type="range" id="slider-brightness" min="5" max="100" value="100">
+              </div>
+
+              <div class="control-field">
+                <div class="field-label">
+                  <span>EFEKT HIZI</span>
+                  <span class="mono-val" id="label-speed">1.0x</span>
+                </div>
+                <input type="range" id="slider-speed" min="20" max="300" value="100">
+              </div>
+
+              <div class="control-field">
+                <div class="field-label">
+                  <span>SES KAZANCI (GAIN)</span>
+                  <span class="mono-val" id="label-audio-sens">1.5x</span>
+                </div>
+                <input type="range" id="slider-audio-sens" min="5" max="40" value="15">
+              </div>
+
+              <div class="control-field">
+                <div class="field-label"><span>VEKTÖR YÖNÜ</span></div>
+                <div class="direction-buttons">
+                  <button class="dir-btn" data-dir="left" title="Sola">SOL</button>
+                  <button class="dir-btn active" data-dir="right" title="Sağa">SAĞ</button>
+                  <button class="dir-btn" data-dir="up" title="Yukarı">ÜST</button>
+                  <button class="dir-btn" data-dir="down" title="Aşağı">ALT</button>
+                </div>
+              </div>
+
+              <div class="inspector-divider"></div>
+              <div class="inspector-header">RENK KANALLARI</div>
+
+              <div class="color-channels-list">
+                <div class="color-channel-row">
+                  <span class="channel-name">KANAL 01 (ANA)</span>
+                  <div class="color-picker-wrap">
+                    <span class="color-hex-tag" id="hex-primary">#E62E2D</span>
+                    <input type="color" id="picker-primary" value="#e62e2d">
+                  </div>
+                </div>
+
+                <div class="color-channel-row">
+                  <span class="channel-name">KANAL 02 (ALT)</span>
+                  <div class="color-picker-wrap">
+                    <span class="color-hex-tag" id="hex-secondary">#00D2FF</span>
+                    <input type="color" id="picker-secondary" value="#00d2ff">
+                  </div>
+                </div>
+
+                <div class="color-channel-row">
+                  <span class="channel-name">KANAL 03 (AKSAN)</span>
+                  <div class="color-picker-wrap">
+                    <span class="color-hex-tag" id="hex-tertiary">#F59E0B</span>
+                    <input type="color" id="picker-tertiary" value="#f59e0b">
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- TAB 2: PER-KEY CUSTOM PAINT & PROFILES                          -->
+        <!-- =============================================================== -->
+        <div class="tab-content" id="tab-paint">
+          <div class="paint-toolbar">
+            <div class="paint-palette-group">
+              <span class="section-micro-title">FIRÇA RENGİ SEÇİMİ</span>
+              <div class="swatches-bar">
+                <div class="swatch-circle active" style="background: #e62e2d;" data-color="#e62e2d" title="Redragon Kırmızı"></div>
+                <div class="swatch-circle" style="background: #f59e0b;" data-color="#f59e0b" title="Kehribar"></div>
+                <div class="swatch-circle" style="background: #10b981;" data-color="#10b981" title="Zümrüt"></div>
+                <div class="swatch-circle" style="background: #00d2ff;" data-color="#00d2ff" title="Buz Mavisi"></div>
+                <div class="swatch-circle" style="background: #3b82f6;" data-color="#3b82f6" title="Kobalt"></div>
+                <div class="swatch-circle" style="background: #8b5cf6;" data-color="#8b5cf6" title="Viyole"></div>
+                <div class="swatch-circle" style="background: #ec4899;" data-color="#ec4899" title="Macenta"></div>
+                <div class="swatch-circle" style="background: #ffffff;" data-color="#ffffff" title="Saf Beyaz"></div>
+                <div class="swatch-circle swatch-off" style="background: #090a0d;" data-color="#000000" title="LED Kapat (Silgi)"></div>
+                <input type="color" id="picker-brush" value="#e62e2d" title="Özel Renk Seçici">
+              </div>
+            </div>
+
+            <div class="paint-actions-group">
+              <div class="inline-save-group">
+                <input type="text" id="input-profile-name" class="form-input compact-input" placeholder="Profil adı..." value="Ozel_Profil">
+                <button class="btn-act" id="btn-paint-save">PROFİLİ KAYDET</button>
+              </div>
+              <button class="btn-act primary" id="btn-paint-fill">TÜMÜNÜ DOLDUR</button>
+              <button class="btn-act danger" id="btn-paint-clear">TÜMÜNÜ KAPAT</button>
+            </div>
+          </div>
+
+          <div class="section-micro-title" style="margin-top: 4px;">FABRİKA &amp; ESPOR TUŞ HARİTASI PROFİLLERİ</div>
+
+          <div class="presets-grid">
+            <div class="preset-tile" data-preset="valorant_fps">
+              <div class="preset-color-strip" style="background: linear-gradient(90deg, #ff4655, #00e5ff);"></div>
+              <div class="preset-info">
+                <div class="preset-name">Valorant Taktik FPS</div>
+                <div class="preset-sub">WASD, Yetenek (C/Q/E/X) ve Silah Yuvaları</div>
+              </div>
+            </div>
+
+            <div class="preset-tile" data-preset="cs2_competitive">
+              <div class="preset-color-strip" style="background: linear-gradient(90deg, #f59e0b, #ef4444);"></div>
+              <div class="preset-info">
+                <div class="preset-name">Counter-Strike 2 Rekabetçi</div>
+                <div class="preset-sub">Kehribar WASD, Bomba &amp; Teçhizat Tuşları</div>
+              </div>
+            </div>
+
+            <div class="preset-tile" data-preset="lol_moba">
+              <div class="preset-color-strip" style="background: linear-gradient(90deg, #0ea5e9, #eab308);"></div>
+              <div class="preset-info">
+                <div class="preset-name">League of Legends MOBA</div>
+                <div class="preset-sub">QWER Yetenek, D/F Büyü ve 1-6 Eşya Barı</div>
+              </div>
+            </div>
+
+            <div class="preset-tile" data-preset="turkish_flag">
+              <div class="preset-color-strip" style="background: linear-gradient(90deg, #e30a17, #ffffff);"></div>
+              <div class="preset-info">
+                <div class="preset-name">Türk Bayrağı (Ay Yıldız)</div>
+                <div class="preset-sub">Kırmızı Zemin Üzerine Beyaz Hilal ve Yıldız</div>
+              </div>
+            </div>
+
+            <div class="preset-tile" data-preset="cyberpunk_neon">
+              <div class="preset-color-strip" style="background: linear-gradient(90deg, #fcee09, #00f0ff, #ff0055);"></div>
+              <div class="preset-info">
+                <div class="preset-name">Night City 2077</div>
+                <div class="preset-sub">Yüksek Kontrast Sarı, Siyan ve Macenta</div>
+              </div>
+            </div>
+
+            <div class="preset-tile" data-preset="synthwave_80s">
+              <div class="preset-color-strip" style="background: linear-gradient(90deg, #9333ea, #ec4899, #06b6d4);"></div>
+              <div class="preset-info">
+                <div class="preset-name">Outrun Synthwave</div>
+                <div class="preset-sub">Kademeli Viyole, Fuşya ve Turkuaz Geçiş</div>
+              </div>
+            </div>
+
+            <div class="preset-tile" data-preset="sunset_vibes">
+              <div class="preset-color-strip" style="background: linear-gradient(90deg, #7c2d12, #ea580c, #facc15);"></div>
+              <div class="preset-info">
+                <div class="preset-name">Horizon Termal</div>
+                <div class="preset-sub">Sıcak Kızıl, Bakır ve Altın Tonlama</div>
+              </div>
+            </div>
+
+            <div class="preset-tile" data-preset="minecraft_adventure">
+              <div class="preset-color-strip" style="background: linear-gradient(90deg, #22c55e, #38bdf8);"></div>
+              <div class="preset-info">
+                <div class="preset-name">Sandbox Craft</div>
+                <div class="preset-sub">Biyom Yeşili ve Elmas Mavisi Düzeni</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- TAB 3: MACRO STUDIO                                             -->
+        <!-- =============================================================== -->
+        <div class="tab-content" id="tab-macros">
+          <div class="effects-toolbar">
+            <div>
+              <div class="section-micro-title">DONANIM SEVİYESİ DÜŞÜK GECİKMELİ MAKRO MOTORU</div>
+              <div style="font-size: 12px; color: var(--text-muted);">Win32 <code>WH_KEYBOARD_LL</code> kancası ile milisaniye hassasiyetinde tuş, gecikme ve fare otomasyonu.</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="section-micro-title" style="margin: 0;">MAKRO MOTORU AKTİF</span>
+              <label class="switch">
+                <input type="checkbox" id="toggle-global-macros" checked>
+                <span class="slider-toggle"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="macro-layout">
+            <!-- Left: Saved Macros -->
+            <div class="macro-box">
+              <div class="macro-box-header">
+                <span class="section-micro-title" style="margin: 0;">KAYITLI MAKRO PROFİLLERİ</span>
+                <button class="btn-act" id="btn-new-macro">+ YENİ OLUŞTUR</button>
+              </div>
+              <div id="macro-list-container" class="macro-list-scroll"></div>
+            </div>
+
+            <!-- Right: Macro Builder (No Browser Prompts!) -->
+            <div class="macro-box">
+              <div class="macro-box-header">
+                <span class="section-micro-title" id="macro-editor-title" style="margin: 0;">MAKRO DÜZENLEYİCİ</span>
+                <div style="display: flex; gap: 8px;">
+                  <button class="btn-act danger" id="btn-record-macro">CANLI KAYIT BAŞLAT</button>
+                  <button class="btn-act" id="btn-clear-steps">ADIMLARI TEMİZLE</button>
+                </div>
+              </div>
+              <input type="hidden" id="macro-edit-id" value="">
+
+              <div class="macro-meta-grid">
+                <div class="control-field">
+                  <span class="field-label">MAKRO ADI</span>
+                  <input type="text" id="macro-name" class="form-input" value="CS2 Hızlı Silah Değişimi">
+                </div>
+
+                <div class="control-field">
+                  <span class="field-label">TETİKLEYİCİ TUŞ</span>
+                  <div style="display: flex; gap: 6px;">
+                    <input type="text" id="macro-trigger" class="form-input mono-input" value="f6" readonly>
+                    <button class="btn-act" id="btn-bind-trigger">TUŞ ATA</button>
+                  </div>
+                </div>
+
+                <div class="control-field">
+                  <span class="field-label">ÇALIŞMA MODU</span>
+                  <select id="macro-repeat-mode" class="form-select">
+                    <option value="once">Tek Sefer (Once)</option>
+                    <option value="repeat_n">Belirli Sayıda Tekrar (Repeat N)</option>
+                    <option value="toggle_loop">Aç / Kapat Döngü (Toggle Loop)</option>
+                  </select>
+                </div>
+
+                <div class="control-field">
+                  <span class="field-label">TEKRAR SAYISI</span>
+                  <input type="number" id="macro-repeat-count" class="form-input mono-input" min="1" max="999" value="1">
+                </div>
+              </div>
+
+              <!-- Inline Step Composer Bar (Replaces ugly browser prompts) -->
+              <div class="inline-step-composer">
+                <div class="composer-cell">
+                  <input type="text" id="step-key-input" class="form-input compact-input mono-input" placeholder="Tuş (q, space)" value="q" style="width: 86px;">
+                  <button class="btn-act" id="btn-add-keypress">+ TUŞ</button>
+                </div>
+                <div class="composer-cell">
+                  <input type="number" id="step-delay-input" class="form-input compact-input mono-input" value="40" min="1" max="10000" style="width: 74px;">
+                  <button class="btn-act" id="btn-add-delay">+ MS BEKLE</button>
+                </div>
+                <div class="composer-cell">
+                  <select id="step-mouse-input" class="form-select compact-input" style="width: 88px;">
+                    <option value="left">Sol Tık</option>
+                    <option value="right">Sağ Tık</option>
+                    <option value="middle">Orta Tık</option>
+                  </select>
+                  <button class="btn-act" id="btn-add-mouse">+ FARE</button>
+                </div>
+                <div class="composer-cell" style="flex: 1;">
+                  <input type="text" id="step-text-input" class="form-input compact-input" placeholder="Metin..." value="GG" style="flex: 1; min-width: 60px;">
+                  <button class="btn-act" id="btn-add-text">+ METİN</button>
+                </div>
+              </div>
+
+              <div class="step-list" id="macro-steps-list"></div>
+
+              <button class="btn-act primary" id="btn-save-macro" style="justify-content: center; padding: 11px;">
+                MAKROYU KAYDET VE ETKİNLEŞTİR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- TAB 4: HARDWARE FIRMWARE MODES (MCU ROM)                        -->
+        <!-- =============================================================== -->
+        <div class="tab-content" id="tab-firmware">
+          <div class="effects-split-layout">
+            <div class="effects-browser">
+              <div class="effects-toolbar">
+                <div>
+                  <div class="section-micro-title">DAHİLİ SINOWEALTH SH68F90A ÇİP MODLARI (REPORT 0x06)</div>
+                  <div style="font-size: 12px; color: var(--text-muted);">Bu modlar doğrudan klavyenin dahili EEPROM hafızasına yazılır; yazılım kapalıyken de çalışır.</div>
+                </div>
+              </div>
+
+              <div class="cards-grid">
+                <div class="card-item" data-fw="fw-rainbow">
+                  <div class="card-top"><span class="card-idx">ROM 01</span><span class="card-tag tag-thematic">DONANIM</span></div>
+                  <div class="card-name">Donanım Gökkuşağı</div>
+                  <div class="card-desc">Fabrika çıkışı dahili spektrum akışı</div>
+                  <div class="card-bar bar-rainbow"></div>
+                </div>
+                <div class="card-item" data-fw="fw-snake">
+                  <div class="card-top"><span class="card-idx">ROM 02</span><span class="card-tag tag-thematic">DONANIM</span></div>
+                  <div class="card-name">Sürekli Tarama (Snake)</div>
+                  <div class="card-desc">Satırlar boyunca ilerleyen tekil iz</div>
+                  <div class="card-bar bar-matrix"></div>
+                </div>
+                <div class="card-item" data-fw="fw-sine-wave">
+                  <div class="card-top"><span class="card-idx">ROM 03</span><span class="card-tag tag-thematic">DONANIM</span></div>
+                  <div class="card-name">Harmonik Sinüs</div>
+                  <div class="card-desc">Donanımsal sinüs dalga simülasyonu</div>
+                  <div class="card-bar bar-dual"></div>
+                </div>
+                <div class="card-item" data-fw="fw-star-twinkle">
+                  <div class="card-top"><span class="card-idx">ROM 04</span><span class="card-tag tag-thematic">DONANIM</span></div>
+                  <div class="card-name">Yıldız Parlaması</div>
+                  <div class="card-desc">Çip üzerinde çalışan rastgele pırıltı</div>
+                  <div class="card-bar bar-static"></div>
+                </div>
+                <div class="card-item" data-fw="fw-rainbow-blossom">
+                  <div class="card-top"><span class="card-idx">ROM 05</span><span class="card-tag tag-thematic">DONANIM</span></div>
+                  <div class="card-name">Merkezden Açılma</div>
+                  <div class="card-desc">Merkezden dışa doğru açılan spektrum</div>
+                  <div class="card-bar bar-rainbow"></div>
+                </div>
+                <div class="card-item" data-fw="fw-waterfall">
+                  <div class="card-top"><span class="card-idx">ROM 06</span><span class="card-tag tag-thematic">DONANIM</span></div>
+                  <div class="card-name">Dikey Şelale</div>
+                  <div class="card-desc">Üstten alta doğru sürekli ışık akışı</div>
+                  <div class="card-bar bar-spectrum"></div>
+                </div>
+                <div class="card-item" data-fw="fw-wheel">
+                  <div class="card-top"><span class="card-idx">ROM 07</span><span class="card-tag tag-thematic">DONANIM</span></div>
+                  <div class="card-name">Dönen Spektrum Çarkı</div>
+                  <div class="card-desc">Klavye ekseninde dönen renk çarkı</div>
+                  <div class="card-bar bar-rainbow"></div>
+                </div>
+                <div class="card-item" data-fw="fw-static">
+                  <div class="card-top"><span class="card-idx">ROM 08</span><span class="card-tag tag-thematic">DONANIM</span></div>
+                  <div class="card-name">Kalıcı Sabit Renk</div>
+                  <div class="card-desc">Donanım hafızasında saklanan sabit renk</div>
+                  <div class="card-bar bar-fire"></div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="inspector-panel">
+              <div class="inspector-header">MCU ROM PARAMETRELERİ</div>
+              <div class="control-field">
+                <div class="field-label"><span>DONANIM HIZI (1-4)</span><span class="mono-val" id="label-fw-speed">3</span></div>
+                <input type="range" id="slider-fw-speed" min="1" max="4" value="3">
+              </div>
+              <div class="control-field">
+                <div class="field-label"><span>DONANIM PARLAKLIĞI (1-4)</span><span class="mono-val" id="label-fw-brightness">4</span></div>
+                <input type="range" id="slider-fw-brightness" min="1" max="4" value="4">
+              </div>
+              <div class="inspector-divider"></div>
+              <div class="color-channel-row">
+                <span class="channel-name">ROM RENK</span>
+                <div class="color-picker-wrap">
+                  <span class="color-hex-tag" id="hex-fw-color">#E62E2D</span>
+                  <input type="color" id="picker-fw-color" value="#e62e2d">
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- TAB 5: SETTINGS & PERFORMANCE                                   -->
+        <!-- =============================================================== -->
+        <div class="tab-content" id="tab-settings">
+          <div class="settings-grid">
+            <div class="setting-card">
+              <div class="section-micro-title">PERFORMANS &amp; BELLEK MİMARİSİ</div>
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-title">Ultra Düşük RAM / Eko Modu</div>
+                  <div class="setting-desc">Win32 <code>EmptyWorkingSet</code> ile fiziksel RAM tüketimini ~1 MB altında tutar ve gereksiz USB paketlerini keser.</div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="set-eco-mode" checked>
+                  <span class="slider-toggle"></span>
+                </label>
+              </div>
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-title">Sürücü Yenileme Hızı (Target FPS)</div>
+                  <div class="setting-desc">USB HID Feature Report (Col08) saniyedeki kare gönderim sıklığı.</div>
+                </div>
+                <select id="set-target-fps" class="form-select">
+                  <option value="15">15 FPS (Maksimum Tasarruf)</option>
+                  <option value="25">25 FPS (Düşük CPU)</option>
+                  <option value="35" selected>35 FPS (Dengeli Standart)</option>
+                  <option value="60">60 FPS (Maksimum Akıcılık)</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-title">Canlı Arayüz Tuş Önizlemesi</div>
+                  <div class="setting-desc">Kapatıldığında üst paneldeki 61 tuşun gerçek zamanlı DOM boyamasını durdurur.</div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="set-live-preview" checked>
+                  <span class="slider-toggle"></span>
+                </label>
+              </div>
+
+              <div class="ram-telemetry-banner">
+                <div>
+                  <div class="tel-label">ANLIK SÜRÜCÜ WORKING SET BELLEĞİ</div>
+                  <div class="ram-big-value" id="settings-ram-readout">0.9 MB</div>
+                </div>
+                <button class="btn-act primary" id="btn-trim-ram">BELLEĞİ ŞİMDİ OPTİMİZE ET</button>
+              </div>
+            </div>
+
+            <div class="setting-card">
+              <div class="section-micro-title">SİSTEM &amp; GÜÇ YÖNETİMİ</div>
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-title">Windows Başlangıcında Otomatik Çalıştır</div>
+                  <div class="setting-desc">Oturum açıldığında son aydınlatma profili ve makrolarla tepsi modunda başlar.</div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="set-autostart">
+                  <span class="slider-toggle"></span>
+                </label>
+              </div>
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-title">Boşta (Idle) LED Uyku Zamanlayıcısı</div>
+                  <div class="setting-desc">Belirtilen süre boyunca tuşa basılmazsa LED'leri kapatır; ilk tuşta anında uyanır.</div>
+                </div>
+                <select id="set-idle-timeout" class="form-select">
+                  <option value="0">Kapalı (Sürekli Açık)</option>
+                  <option value="5">5 Dakika</option>
+                  <option value="15" selected>15 Dakika</option>
+                  <option value="30">30 Dakika</option>
+                  <option value="60">60 Dakika</option>
+                </select>
+              </div>
+
+              <div class="setting-row">
+                <div>
+                  <div class="setting-title">Pencere Kapatıldığında Sistem Tepsisine Küçült</div>
+                  <div class="setting-desc">Uygulama kapatıldığında arka planda sıfıra yakın kaynakla çalışmaya devam eder.</div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="set-tray" checked>
+                  <span class="slider-toggle"></span>
+                </label>
+              </div>
+
+              <div class="sys-spec-box">
+                <div><span>AYGIT KİMLİĞİ:</span> <code>HID\VID_258A&amp;PID_0049&amp;MI_01&amp;Col08</code></div>
+                <div><span>MİMARİ:</span> <code>Zero-Allocation 382-Byte Feature Report</code></div>
+                <div><span>KURULUM PAKETİ:</span> <code>RedragonK617_Setup.exe / RedragonK617_Studio.exe</code></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- NON-INTRUSIVE HARDWARE TOAST -->
+  <div id="status-toast" class="status-toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

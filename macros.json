@@ -1,0 +1,90 @@
+[
+  {
+    "id": "macro_quickswitch",
+    "name": "CS2 / Valorant Quick Switch (AWP/Op)",
+    "trigger": "f6",
+    "repeat_mode": "once",
+    "repeat_count": 1,
+    "enabled": false,
+    "steps": [
+      {
+        "type": "key_press",
+        "value": "3"
+      },
+      {
+        "type": "delay",
+        "value": 45
+      },
+      {
+        "type": "key_press",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": "macro_autoclick",
+    "name": "Turbo Sol Tık (Auto-Clicker 40 CPS)",
+    "trigger": "f7",
+    "repeat_mode": "toggle_loop",
+    "repeat_count": 1,
+    "enabled": false,
+    "steps": [
+      {
+        "type": "mouse_click",
+        "value": "left"
+      },
+      {
+        "type": "delay",
+        "value": 25
+      }
+    ]
+  },
+  {
+    "id": "macro_bhop",
+    "name": "BunnyHop Zıplama Döngüsü",
+    "trigger": "f8",
+    "repeat_mode": "toggle_loop",
+    "repeat_count": 1,
+    "enabled": false,
+    "steps": [
+      {
+        "type": "key_press",
+        "value": "space"
+      },
+      {
+        "type": "delay",
+        "value": 32
+      }
+    ]
+  },
+  {
+    "id": "macro_ggwp",
+    "name": "Hızlı Oyun Sonu Mesajı (GG WP)",
+    "trigger": "f9",
+    "repeat_mode": "once",
+    "repeat_count": 1,
+    "enabled": false,
+    "steps": [
+      {
+        "type": "key_press",
+        "value": "enter"
+      },
+      {
+        "type": "delay",
+        "value": 30
+      },
+      {
+        "type": "text",
+        "value": "GG WP!"
+      },
+      {
+        "type": "delay",
+        "value": 20
+      },
+      {
+        "type": "key_press",
+        "value": "enter"
+      }
+    ]
+  }
+]

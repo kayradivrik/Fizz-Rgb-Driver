@@ -1,0 +1,346 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="100%">
+  <defs>
+    <linearGradient id="winBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b0c10"/>
+      <stop offset="100%" stop-color="#08090c"/>
+    </linearGradient>
+    <radialGradient id="stageGlow" cx="50%" cy="52%" r="50%">
+      <stop offset="0%" stop-color="#ff2a85" stop-opacity="0.18"/>
+      <stop offset="55%" stop-color="#00e5ff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#0b0c10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Main Desktop Window Frame -->
+  <rect x="2" y="2" width="1276" height="756" rx="10" fill="url(#winBg)" stroke="#242936" stroke-width="2"/>
+  <!-- Top Window Bar -->
+  <rect x="3" y="3" width="1274" height="40" rx="8" fill="#101217"/>
+  <line x1="3" y1="43" x2="1277" y2="43" stroke="#222631" stroke-width="1"/>
+  <rect x="18" y="15" width="8" height="16" rx="2" fill="#e53935"/>
+  <text x="34" y="28" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="800" font-size="14">Fizz-Rgb-Driver</text>
+  <text x="148" y="28" fill="#64748b" font-family="Consolas, monospace" font-size="12">v3.0  ·  258a:0049  ·  Sinowealth SH68F90A</text>
+  <circle cx="1118" cy="23" r="4" fill="#10b981"/>
+  <text x="1128" y="27" fill="#10b981" font-family="Consolas, monospace" font-weight="700" font-size="12">Connected</text>
+  <text x="1215" y="27" fill="#94a3b8" font-family="Consolas, monospace" font-size="13">—  ▢  ✕</text>
+  <!-- Left Sidebar (215px) -->
+  <rect x="3" y="44" width="215" height="713" fill="#0d0f14"/>
+  <line x1="218" y1="44" x2="218" y2="757" stroke="#222631" stroke-width="1"/>
+  <text x="20" y="72" fill="#64748b" font-family="Consolas, monospace" font-weight="700" font-size="10.5">MODE &amp; MODULES</text>
+  <!-- Nav Buttons -->
+  <rect x="14" y="84" width="192" height="36" rx="6" fill="#1b202b" stroke="#e53935" stroke-width="1"/>
+  <rect x="14" y="84" width="4" height="36" rx="2" fill="#e53935"/>
+  <text x="30" y="106" fill="#f8fafc" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12.5">Aydınlatma Efektleri (23)</text>
+  <rect x="14" y="126" width="192" height="36" rx="6" fill="#13161d"/>
+  <text x="30" y="148" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-weight="600" font-size="12.5">Tuş Boyama &amp; Profiller</text>
+  <rect x="14" y="168" width="192" height="36" rx="6" fill="#13161d"/>
+  <text x="30" y="190" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-weight="600" font-size="12.5">Makro Stüdyosu</text>
+  <rect x="14" y="210" width="192" height="36" rx="6" fill="#13161d"/>
+  <text x="30" y="232" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-weight="600" font-size="12.5">Donanım Hafızası (MCU)</text>
+  <rect x="14" y="252" width="192" height="36" rx="6" fill="#13161d"/>
+  <text x="30" y="274" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-weight="600" font-size="12.5">Ayarlar &amp; Performans</text>
+  <!-- Firmware Effects Quick List in Sidebar -->
+  <text x="20" y="316" fill="#64748b" font-family="Consolas, monospace" font-weight="700" font-size="10.5">FIRMWARE EFFECTS (ROM)</text>
+  <rect x="14" y="330" width="192" height="24" rx="4" fill="#11141b"/>
+  <text x="26" y="346" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11.5">★  Rainbow</text>
+  <rect x="14" y="358" width="192" height="24" rx="4" fill="#11141b"/>
+  <text x="26" y="374" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11.5">★  Rainbow Blossom</text>
+  <rect x="14" y="386" width="192" height="24" rx="4" fill="#11141b"/>
+  <text x="26" y="402" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11.5">★  Sine Wave</text>
+  <rect x="14" y="414" width="192" height="24" rx="4" fill="#11141b"/>
+  <text x="26" y="430" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11.5">★  Snake</text>
+  <rect x="14" y="442" width="192" height="24" rx="4" fill="#11141b"/>
+  <text x="26" y="458" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11.5">★  Star Twinkle</text>
+  <rect x="14" y="470" width="192" height="24" rx="4" fill="#11141b"/>
+  <text x="26" y="486" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11.5">★  Waterfall</text>
+  <rect x="14" y="498" width="192" height="24" rx="4" fill="#11141b"/>
+  <text x="26" y="514" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11.5">★  Wheel</text>
+  <rect x="14" y="526" width="192" height="24" rx="4" fill="#11141b"/>
+  <text x="26" y="542" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11.5">★  Static</text>
+  <!-- Sidebar Telemetry Footer -->
+  <rect x="14" y="618" width="192" height="124" rx="7" fill="#090a0e" stroke="#222631"/>
+  <text x="26" y="638" fill="#64748b" font-family="Consolas, monospace" font-weight="700" font-size="10">WORKING SET RAM</text>
+  <text x="26" y="662" fill="#10b981" font-family="Consolas, monospace" font-weight="800" font-size="20">0.94 MB</text>
+  <text x="124" y="662" fill="#f1f5f9" font-family="Consolas, monospace" font-weight="700" font-size="13">35 FPS</text>
+  <text x="26" y="682" fill="#64748b" font-family="Consolas, monospace" font-size="10">Col08 382B Zero-Alloc</text>
+  <rect x="24" y="696" width="172" height="32" rx="5" fill="#1a1f2a" stroke="#2e3646"/>
+  <text x="110" y="716" fill="#e2e8f0" font-family="Segoe UI, sans-serif" font-weight="700" font-size="11.5" text-anchor="middle">Belleği Temizle (Trim)</text>
+  <!-- Center Top Toolbar -->
+  <rect x="232" y="54" width="756" height="46" rx="7" fill="#12151c" stroke="#222631"/>
+  <text x="248" y="81" fill="#94a3b8" font-family="Consolas, monospace" font-weight="700" font-size="11.5">QUICK GROUPS:</text>
+  <rect x="352" y="64" width="56" height="26" rx="5" fill="#e53935"/>
+  <text x="380" y="81" fill="#ffffff" font-family="Consolas, monospace" font-weight="700" font-size="11.5" text-anchor="middle">WASD</text>
+  <rect x="416" y="64" width="56" height="26" rx="5" fill="#1b202b" stroke="#2c3344"/>
+  <text x="444" y="81" fill="#cbd5e1" font-family="Consolas, monospace" font-weight="700" font-size="11.5" text-anchor="middle">QWER</text>
+  <rect x="480" y="64" width="52" height="26" rx="5" fill="#1b202b" stroke="#2c3344"/>
+  <text x="506" y="81" fill="#cbd5e1" font-family="Consolas, monospace" font-weight="700" font-size="11.5" text-anchor="middle">1-0</text>
+  <rect x="540" y="64" width="76" height="26" rx="5" fill="#1b202b" stroke="#2c3344"/>
+  <text x="578" y="81" fill="#cbd5e1" font-family="Consolas, monospace" font-weight="700" font-size="11.5" text-anchor="middle">Modifiye</text>
+  <rect x="866" y="64" width="108" height="26" rx="5" fill="#10b981" fill-opacity="0.18" stroke="#10b981"/>
+  <text x="920" y="81" fill="#34d399" font-family="Consolas, monospace" font-weight="700" font-size="11" text-anchor="middle">● Live Stream</text>
+  <!-- Center 3D Perspective Keyboard Stage -->
+  <rect x="232" y="110" width="756" height="440" rx="9" fill="#0d0f14" stroke="#222631"/>
+  <ellipse cx="610" cy="335" rx="340" ry="175" fill="url(#stageGlow)"/>
+  <!-- Hud overlay box inside stage -->
+  <rect x="252" y="128" width="235" height="64" rx="6" fill="#131720" fill-opacity="0.9" stroke="#262c3a"/>
+  <text x="266" y="148" fill="#e2e8f0" font-family="Consolas, monospace" font-weight="700" font-size="11">REDRAGON K617 FIZZ (61-KEY)</text>
+  <text x="266" y="166" fill="#94a3b8" font-family="Consolas, monospace" font-size="10.5">• Click / Drag: Per-key RGB Paint</text>
+  <text x="266" y="182" fill="#94a3b8" font-family="Consolas, monospace" font-size="10.5">• Active Preset: Outrun Synthwave</text>
+  <g transform="translate(305, 235) rotate(-7) skewX(8)">
+    <rect x="-14" y="-14" width="592" height="226" rx="12" fill="#181b24" stroke="#333b4d" stroke-width="2"/>
+    <rect x="-6" y="-6" width="576" height="210" rx="8" fill="#08090d"/>
+    <rect x="0.0" y="0.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="2.0" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="7.0" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">ESC</text>
+    <rect x="37.4" y="0.0" width="34.2" height="36.5" rx="5" fill="#00e5ff" opacity="0.92"/>
+    <rect x="39.4" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="44.4" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">1</text>
+    <rect x="74.8" y="0.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="76.8" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="81.8" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">2</text>
+    <rect x="112.2" y="0.0" width="34.2" height="36.5" rx="5" fill="#00e5ff" opacity="0.92"/>
+    <rect x="114.2" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="119.2" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">3</text>
+    <rect x="149.6" y="0.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="151.6" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="156.6" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">4</text>
+    <rect x="187.0" y="0.0" width="34.2" height="36.5" rx="5" fill="#00e5ff" opacity="0.92"/>
+    <rect x="189.0" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="194.0" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">5</text>
+    <rect x="224.4" y="0.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="226.4" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="231.4" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">6</text>
+    <rect x="261.8" y="0.0" width="34.2" height="36.5" rx="5" fill="#00e5ff" opacity="0.92"/>
+    <rect x="263.8" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="268.8" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">7</text>
+    <rect x="299.2" y="0.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="301.2" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="306.2" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">8</text>
+    <rect x="336.6" y="0.0" width="34.2" height="36.5" rx="5" fill="#00e5ff" opacity="0.92"/>
+    <rect x="338.6" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="343.6" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">9</text>
+    <rect x="374.0" y="0.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="376.0" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="381.0" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">0</text>
+    <rect x="411.4" y="0.0" width="34.2" height="36.5" rx="5" fill="#00e5ff" opacity="0.92"/>
+    <rect x="413.4" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="418.4" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">-</text>
+    <rect x="448.8" y="0.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="450.8" y="2.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="455.8" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">=</text>
+    <rect x="486.2" y="0.0" width="71.6" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="488.2" y="2.0" width="67.6" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="493.2" y="15.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Backspace</text>
+    <rect x="0.0" y="40.0" width="52.9" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="2.0" y="42.0" width="48.9" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="7.0" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Tab</text>
+    <rect x="56.1" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="58.1" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="63.1" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Q</text>
+    <rect x="93.5" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="95.5" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="100.5" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">W</text>
+    <rect x="130.9" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="132.9" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="137.9" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">E</text>
+    <rect x="168.3" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="170.3" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="175.3" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">R</text>
+    <rect x="205.7" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="207.7" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="212.7" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">T</text>
+    <rect x="243.1" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="245.1" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="250.1" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Y</text>
+    <rect x="280.5" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="282.5" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="287.5" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">U</text>
+    <rect x="317.9" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="319.9" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="324.9" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">I</text>
+    <rect x="355.3" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="357.3" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="362.3" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">O</text>
+    <rect x="392.7" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="394.7" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="399.7" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">P</text>
+    <rect x="430.1" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="432.1" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="437.1" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">[</text>
+    <rect x="467.5" y="40.0" width="34.2" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="469.5" y="42.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="474.5" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">]</text>
+    <rect x="504.9" y="40.0" width="52.9" height="36.5" rx="5" fill="#f43f7a" opacity="0.92"/>
+    <rect x="506.9" y="42.0" width="48.9" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="511.9" y="55.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">\</text>
+    <rect x="0.0" y="80.0" width="62.2" height="36.5" rx="5" fill="#00e5ff" opacity="0.92"/>
+    <rect x="2.0" y="82.0" width="58.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="7.0" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Caps</text>
+    <rect x="65.5" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="67.5" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="72.5" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">A</text>
+    <rect x="102.8" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="104.8" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="109.8" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">S</text>
+    <rect x="140.2" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="142.2" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="147.2" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">D</text>
+    <rect x="177.7" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="179.7" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="184.7" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">F</text>
+    <rect x="215.0" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="217.0" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="222.0" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">G</text>
+    <rect x="252.4" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="254.4" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="259.4" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">H</text>
+    <rect x="289.8" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="291.8" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="296.8" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">J</text>
+    <rect x="327.2" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="329.2" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="334.2" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">K</text>
+    <rect x="364.6" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="366.6" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="371.6" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">L</text>
+    <rect x="402.1" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="404.1" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="409.1" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">;</text>
+    <rect x="439.4" y="80.0" width="34.2" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="441.4" y="82.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="446.4" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">'</text>
+    <rect x="476.8" y="80.0" width="80.9" height="36.5" rx="5" fill="#e11d74" opacity="0.92"/>
+    <rect x="478.8" y="82.0" width="76.9" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="483.8" y="95.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Enter</text>
+    <rect x="0.0" y="120.0" width="80.9" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="2.0" y="122.0" width="76.9" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="7.0" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Shift</text>
+    <rect x="84.1" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="86.1" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="91.1" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Z</text>
+    <rect x="121.5" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="123.5" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="128.6" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">X</text>
+    <rect x="158.9" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="160.9" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="165.9" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">C</text>
+    <rect x="196.3" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="198.3" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="203.3" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">V</text>
+    <rect x="233.8" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="235.8" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="240.8" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">B</text>
+    <rect x="271.1" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="273.1" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="278.1" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">N</text>
+    <rect x="308.6" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="310.6" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="315.6" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">M</text>
+    <rect x="345.9" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="347.9" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="352.9" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">,</text>
+    <rect x="383.3" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="385.3" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="390.3" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">.</text>
+    <rect x="420.8" y="120.0" width="34.2" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="422.8" y="122.0" width="30.2" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="427.8" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">/</text>
+    <rect x="458.1" y="120.0" width="99.6" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="460.1" y="122.0" width="95.6" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="465.1" y="135.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Shift</text>
+    <rect x="0.0" y="160.0" width="43.5" height="36.5" rx="5" fill="#00e5ff" opacity="0.92"/>
+    <rect x="2.0" y="162.0" width="39.5" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="7.0" y="175.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Ctrl</text>
+    <rect x="46.8" y="160.0" width="43.5" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="48.8" y="162.0" width="39.5" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="53.8" y="175.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Win</text>
+    <rect x="93.5" y="160.0" width="43.5" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="95.5" y="162.0" width="39.5" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="100.5" y="175.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Alt</text>
+    <rect x="140.2" y="160.0" width="230.6" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="142.2" y="162.0" width="226.6" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <rect x="374.0" y="160.0" width="43.5" height="36.5" rx="5" fill="#00e5ff" opacity="0.92"/>
+    <rect x="376.0" y="162.0" width="39.5" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="381.0" y="175.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Alt</text>
+    <rect x="420.8" y="160.0" width="43.5" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="422.8" y="162.0" width="39.5" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="427.8" y="175.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Fn</text>
+    <rect x="467.5" y="160.0" width="43.5" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="469.5" y="162.0" width="39.5" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="474.5" y="175.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Menu</text>
+    <rect x="514.2" y="160.0" width="43.5" height="36.5" rx="5" fill="#fb7185" opacity="0.92"/>
+    <rect x="516.2" y="162.0" width="39.5" height="31.5" rx="3.5" fill="#ffffff" opacity="0.14"/>
+    <text x="521.2" y="175.0" fill="#ffffff" font-family="Segoe UI, sans-serif" font-weight="700" font-size="9.5" opacity="0.92">Ctrl</text>
+  </g>
+  <rect x="232" y="562" width="756" height="180" rx="9" fill="#12151c" stroke="#222631"/>
+  <text x="250" y="586" fill="#94a3b8" font-family="Consolas, monospace" font-weight="700" font-size="11">REAL-TIME STREAMING ENGINE (23 MODES) &amp; MACRO RECORDER</text>
+  <rect x="248" y="600" width="232" height="56" rx="6" fill="#1a1f2b" stroke="#e53935" stroke-width="1"/>
+  <text x="260" y="622" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12.5">Gökkuşağı Dalgası</text>
+  <text x="450" y="622" fill="#00e5ff" font-family="Consolas, monospace" font-weight="700" font-size="10.5">01</text>
+  <text x="260" y="641" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11">Kesintisiz spektrum akışı</text>
+  <rect x="492" y="600" width="232" height="56" rx="6" fill="#151922" stroke="#242936" stroke-width="1"/>
+  <text x="504" y="622" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12.5">Tepkisel Dalga (Ripple)</text>
+  <text x="694" y="622" fill="#f43f5e" font-family="Consolas, monospace" font-weight="700" font-size="10.5">07</text>
+  <text x="504" y="641" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11">Tuş vuruşu kinetik halka</text>
+  <rect x="736" y="600" width="232" height="56" rx="6" fill="#151922" stroke="#242936" stroke-width="1"/>
+  <text x="748" y="622" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12.5">14-Bant Ses Ekolayzır</text>
+  <text x="938" y="622" fill="#10b981" font-family="Consolas, monospace" font-weight="700" font-size="10.5">11</text>
+  <text x="748" y="641" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11">WASAPI gerçek zamanlı DSP</text>
+  <rect x="248" y="666" width="232" height="56" rx="6" fill="#151922" stroke="#242936" stroke-width="1"/>
+  <text x="260" y="688" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12.5">Dijital Yağmur (Matrix)</text>
+  <text x="450" y="688" fill="#22c55e" font-family="Consolas, monospace" font-weight="700" font-size="10.5">14</text>
+  <text x="260" y="707" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11">14 sütunlu fosforlu kod akışı</text>
+  <rect x="492" y="666" width="232" height="56" rx="6" fill="#151922" stroke="#242936" stroke-width="1"/>
+  <text x="504" y="688" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12.5">Termal Kor &amp; Alev</text>
+  <text x="694" y="688" fill="#f97316" font-family="Consolas, monospace" font-weight="700" font-size="10.5">16</text>
+  <text x="504" y="707" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11">Konveksiyon alev simülasyonu</text>
+  <rect x="736" y="666" width="232" height="56" rx="6" fill="#151922" stroke="#242936" stroke-width="1"/>
+  <text x="748" y="688" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12.5">Metaball Plazma</text>
+  <text x="938" y="688" fill="#a855f7" font-family="Consolas, monospace" font-weight="700" font-size="10.5">23</text>
+  <text x="748" y="707" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="11">Dinamik yoğunluk alanları</text>
+  <rect x="1000" y="54" width="266" height="688" rx="9" fill="#12151c" stroke="#222631"/>
+  <text x="1018" y="80" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="13">Presets &amp; Inspector</text>
+  <text x="1018" y="106" fill="#64748b" font-family="Consolas, monospace" font-weight="700" font-size="10.5">BRIGHTNESS (100%)</text>
+  <rect x="1018" y="116" width="230" height="6" rx="3" fill="#222631"/>
+  <rect x="1018" y="116" width="210" height="6" rx="3" fill="#e53935"/>
+  <circle cx="1228" cy="119" r="7" fill="#ffffff" stroke="#e53935" stroke-width="2"/>
+  <text x="1018" y="150" fill="#64748b" font-family="Consolas, monospace" font-weight="700" font-size="10.5">EFFECT SPEED (1.0x)</text>
+  <rect x="1018" y="160" width="230" height="6" rx="3" fill="#222631"/>
+  <rect x="1018" y="160" width="145" height="6" rx="3" fill="#00e5ff"/>
+  <circle cx="1163" cy="163" r="7" fill="#ffffff" stroke="#00e5ff" stroke-width="2"/>
+  <text x="1018" y="194" fill="#64748b" font-family="Consolas, monospace" font-weight="700" font-size="10.5">AUDIO DSP GAIN (1.5x)</text>
+  <rect x="1018" y="204" width="230" height="6" rx="3" fill="#222631"/>
+  <rect x="1018" y="204" width="165" height="6" rx="3" fill="#10b981"/>
+  <circle cx="1183" cy="207" r="7" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
+  <text x="1018" y="242" fill="#64748b" font-family="Consolas, monospace" font-weight="700" font-size="10.5">ESPORTS &amp; THEME PRESETS</text>
+  <rect x="1016" y="256" width="234" height="50" rx="6" fill="#171b24" stroke="#252b38"/>
+  <rect x="1016" y="256" width="4" height="50" rx="2" fill="#ff4655"/>
+  <text x="1030" y="277" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12">Valorant Tactical FPS</text>
+  <text x="1030" y="294" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="10.5">WASD + Abilities + Weapons</text>
+  <rect x="1016" y="314" width="234" height="50" rx="6" fill="#171b24" stroke="#252b38"/>
+  <rect x="1016" y="314" width="4" height="50" rx="2" fill="#f59e0b"/>
+  <text x="1030" y="335" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12">Counter-Strike 2 Comp</text>
+  <text x="1030" y="352" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="10.5">Amber WASD + Utility Keys</text>
+  <rect x="1016" y="372" width="234" height="50" rx="6" fill="#171b24" stroke="#252b38"/>
+  <rect x="1016" y="372" width="4" height="50" rx="2" fill="#0ea5e9"/>
+  <text x="1030" y="393" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12">League of Legends MOBA</text>
+  <text x="1030" y="410" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="10.5">QWER Cast + D/F Summoners</text>
+  <rect x="1016" y="430" width="234" height="50" rx="6" fill="#171b24" stroke="#252b38"/>
+  <rect x="1016" y="430" width="4" height="50" rx="2" fill="#ec4899"/>
+  <text x="1030" y="451" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12">Outrun Synthwave 80s</text>
+  <text x="1030" y="468" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="10.5">Neon Magenta &amp; Cyan Split</text>
+  <rect x="1016" y="488" width="234" height="50" rx="6" fill="#171b24" stroke="#252b38"/>
+  <rect x="1016" y="488" width="4" height="50" rx="2" fill="#fcee09"/>
+  <text x="1030" y="509" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12">Night City 2077</text>
+  <text x="1030" y="526" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="10.5">Cyber Yellow &amp; Electric Blue</text>
+  <rect x="1016" y="546" width="234" height="50" rx="6" fill="#171b24" stroke="#252b38"/>
+  <rect x="1016" y="546" width="4" height="50" rx="2" fill="#e30a17"/>
+  <text x="1030" y="567" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12">Turkish Flag (Ay Yıldız)</text>
+  <text x="1030" y="584" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="10.5">Crimson Base &amp; White Crescent</text>
+  <rect x="1016" y="604" width="234" height="50" rx="6" fill="#171b24" stroke="#252b38"/>
+  <rect x="1016" y="604" width="4" height="50" rx="2" fill="#ea580c"/>
+  <text x="1030" y="625" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12">Horizon Thermal</text>
+  <text x="1030" y="642" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="10.5">Warm Ember to Gold Gradient</text>
+  <rect x="1016" y="662" width="234" height="50" rx="6" fill="#171b24" stroke="#252b38"/>
+  <rect x="1016" y="662" width="4" height="50" rx="2" fill="#22c55e"/>
+  <text x="1030" y="683" fill="#f1f5f9" font-family="Segoe UI, sans-serif" font-weight="700" font-size="12">Sandbox Craft</text>
+  <text x="1030" y="700" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="10.5">Biome Green &amp; Diamond Blue</text>
+</svg>
